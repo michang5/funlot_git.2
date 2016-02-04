@@ -55,10 +55,17 @@ ul, li {
 .btn-default {
 	@include border-radius(50px);
 	padding: 10px 20px;
+    background: $pink;
+    color: $white;
+    border: none;
+    &:hover {
+        background: $dark-pink;
+    }
 }
 #wrapper {
 	height: 100%;
 	min-height: 100%;
+    @include clearfix;
 }
 .section {
 	text-align: center;
@@ -67,42 +74,59 @@ ul, li {
 }
 #Carousel {
 	width: 100%;
+    min-height: 760px;
+    overflow: hidden;
 	position: relative;
 	&.carousel {
-		height: 100%;
+        height: 760px;
+        overflow: hidden;
 		.item, .carousel-inner, .mask {
-			height: 100%;
+            height: 760px;
 		}
 		.mask {
 			position: absolute;
 			width: 100%;
-			height: 100%;
 			z-index: 9;
 			background: image-url('dot.png')
 		}
-		.item {
-			&:nth-child(1) {
-				background: image-url('slider1.jpg');
-				
-			}
-			&:nth-child(2) {
-				background: image-url('slider2.jpg');
-			}
-			&:nth-child(3) {
-				background: image-url('slider3.jpg');
-			}
-			&:nth-child(1), &:nth-child(2), &:nth-child(3) {
-				@include background-size(cover);
-				background-position: center;
-			}
-		}
 	}
+    @include respond-to (only-device){
+        &.carousel {
+            height: auto;
+            min-height: 0; 
+            .item, .carousel-inner, .mask {
+//                height: 540px;
+            }
+        }
+    }
+    @include respond-to (normal-mobile){
+        &.carousel {
+            .item, .carousel-inner, .mask {
+//                height: 540px;
+            }
+        }
+    }
 }
 .carousel-fade {
 	.carousel-inner {
 		.item {
-			-webkit-transition-property: opacity;
-  			transition-property: opacity;
+			&:nth-child(1) {
+				background: image-url('slider1.jpg');
+                 @include background-size(cover);
+			}
+			&:nth-child(2) {
+				background: image-url('slider2.jpg');
+                 @include background-size(cover);
+			}
+			&:nth-child(3) {
+				background: image-url('slider3.jpg');
+                 @include background-size(cover);
+			}
+			&:nth-child(1), &:nth-child(2), &:nth-child(3) {
+                -webkit-transition-property: opacity;
+                transition-property: opacity;
+               
+			}
 		}
 		.item, .active.left, .active.right {
 			opacity: 0;
@@ -115,19 +139,25 @@ ul, li {
 			-webkit-transform: translate3d(0, 0, 0);
 			transform: translate3d(0, 0, 0);
 		}
-	}
+    }
 }
-
 #Home {
-	@include full-screen;
+//	@include full-screen;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    display: table;
 	text-align: center;
+    @include clearfix;
 	article {
-		position: absolute;
 		width: 100%;
-		z-index: 99;
-		top: 200px;
+		top: 160px;
 		color: $white;
-		font-size: 300%;
+		font-size: 250%;
+        position: absolute;
+        z-index: 999
+//        background: red;
+//        display: table-cell;
 	}
 	header {
 		text-shadow: 0 0 5px rgba($black,.6), 0 8px 20px rgba($black,.9);
@@ -136,18 +166,19 @@ ul, li {
 			line-height: 1.1;
 		}
 		h1 {
-			font-size: $xxl-font;
+			font-size: 1.38em;
 			font-weight: 900;
+            letter-spacing: .08em;
 			span {
 				display: block;
-				&:nth-child(1) {
-					letter-spacing: .12em;
-					text-indent: .16em;
-				}
+//				&:nth-child(1) {
+//					letter-spacing: .12em;
+//					text-indent: .16em;
+//				}
 			}
 		}
 		h2 {
-			font-size: 24px;
+			font-size: $xxxs-font;
 			font-weight: 200;
 			letter-spacing: .2em;
 			margin-bottom: 20px;
@@ -162,26 +193,45 @@ ul, li {
 		* {
 			margin-bottom: 10px;
 			line-height: 1.2;
+            color: $white;
 		}
 		h3 {
-			font-size: $xs-font;
-			
+			font-size: $s-font;
+			font-weight: 500;
 		}
 		h4 {
 			font-size: $xxxs-font;
 			letter-spacing: .17em;
 		}
 		h5 {
-			font-size: 18px;
+			font-size: $xxxxs-font;
+            font-weight: 500;
 			i {
-				padding-right: 10px;
-				margin: 0;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                line-height: 30px;
+                background: $green;
+                color: $white;
+				margin-right: 10px;
+                @include border-radius(50%);
+                text-shadow: none;
+                box-shadow: 0 0 10px rgba($white,.5);
+                &.fa-heart {
+                    font-size: 12px;
+                }
 			}
 		}
 		p {
-			font-size: 16px;
+			font-size: $xxxxs-font;
 		}
-		.col-md-6 {
+        .btn {
+            color: $white;
+//            font-size: 20px;
+            padding: 16px 36px;
+            margin: 0 10px;
+        }
+		.col-sm-6 {
 			padding: 0 4%;
 			margin-top: 10px;
 			&:nth-of-type(2) {
@@ -190,7 +240,7 @@ ul, li {
 		}
 	}
 	.navbar {
-		@include background-image(linear-gradient($black, rgba($black,0)));
+		@include background-image(linear-gradient($black ,rgba($black,.7) 50%, rgba($black,0)));
 		border-bottom: none;
 		text-align: center;
 		h2.logo {
@@ -256,43 +306,36 @@ ul, li {
 		
 	}
 	.past-main {
-		@include background-image(linear-gradient($dark-green, rgba($dark-green,0)));
+		@include background-image(linear-gradient($green, rgba($green,0)));
 	}
 	@include respond-to (md-screen){
 	}
 	@include respond-to (only-device){
-		.navbar {
-			.navbar-nav {
-				li {
-					padding: 10px;
-					&:nth-child(3) {
-						padding: 16px;
-					}
-				}
-			}
-		}
+        display: block;
+        section {
+            width: 80%;
+        }
 	}
 	@include respond-to (only-mobile){
+        article {
+            top: 60px;
+        }
 		.navbar {
-			background: $nightsky;
-			color: $yellow;
+			@include background-image(linear-gradient($green, rgba($green,.8) 70%, rgba($green,.5)));
+			color: $white;
 			h2.logo-s {
 				display: block;
-				padding: 16px;
+				padding: 10px;
 				margin: 0;
-				width: 200px;
+				width: 100px;
 				float: left;
-				
 			}
 			.navbar-nav {
 				margin-bottom: 0;
 				li {
 					display: block;
 					padding: 10px;
-					border-bottom: 1px solid $grayblue;
-					a {
-						color: $yellow;
-					}
+					border-bottom: 1px solid #849511;
 					&:nth-child(3) {
 						display: none;
 					}
@@ -301,23 +344,34 @@ ul, li {
 		}
 		header {
 			margin-top: 30px;
-			h3 {
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                letter-spacing: .05em;
 				span {
 					display: block;
 				}
 			}
 		}
+        section {
+            .btn {
+                margin: 6px;
+            }
+            .col-sm-6 {
+                &:nth-of-type(2) {
+                    border-left: none;
+                }
+		    }
+        }
 	}
-	@include respond-to (xxs-mobile){
-		min-height: 300px;
-		padding-bottom: 110px;
-		header {
-			margin-top: 0;
-		}
-		h1, h2, h3 {
-			margin: 0;
-		}
-	}
+    @include respond-to (xxs-mobile){
+        header {
+            h1 {
+                font-size: 26px;
+            }
+        }
+    }
 }
 #About, #Service, #Clients, #Contact {
 	header {
@@ -352,18 +406,7 @@ ul, li {
 		}
 	}
 }
-//#top {
-//	background-image: image-url('top_bg.jpg'), image-url('service_bg_repeat.jpg');
-//	background-position: center bottom, bottom;
-//	background-repeat: no-repeat, repeat;
-//	-webkit-background-size: cover, 100%;
-//	background-size: cover, 100%;
-//	@include respond-to (normal-mobile){
-////		background-position: -20px bottom, bottom;
-////		-webkit-background-size: cover, 100%;
-////		background-size: cover, 100%;
-//	}
-//}
+
 #About {
 	background: image-url('about_bg.png') no-repeat center top;
 	@include background-size(cover);
@@ -736,3 +779,4 @@ ul, li {
 		}
 	}
 }
+
