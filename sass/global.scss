@@ -52,10 +52,9 @@ ul, li {
 	list-style: none;
 }
 //element
-h2 {
-	img {
-		margin: 0 auto;
-	}
+.btn-default {
+	@include border-radius(50px);
+	padding: 10px 20px;
 }
 #wrapper {
 	height: 100%;
@@ -161,23 +160,32 @@ h2 {
 		@include clearfix;
 		@include transparent ($black,.5);
 		* {
-			margin: 0;
+			margin-bottom: 10px;
+			line-height: 1.2;
 		}
 		h3 {
 			font-size: $xs-font;
+			
+		}
+		h4 {
+			font-size: $xxxs-font;
+			letter-spacing: .17em;
 		}
 		h5 {
 			font-size: 18px;
+			i {
+				padding-right: 10px;
+				margin: 0;
+			}
 		}
 		p {
 			font-size: 16px;
-			line-height: 1.2;
 		}
 		.col-md-6 {
-			padding: 0 10%;
+			padding: 0 4%;
 			margin-top: 10px;
-			&:first-of-type {
-				border-right: 1px solid $grey;
+			&:nth-of-type(2) {
+				border-left: 1px solid $white;
 			}
 		}
 	}

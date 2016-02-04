@@ -63,8 +63,11 @@ ul, li {
   list-style: none;
 }
 
-h2 img {
-  margin: 0 auto;
+.btn-default {
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  padding: 10px 20px;
 }
 
 #wrapper {
@@ -104,13 +107,13 @@ h2 img {
   background: url('../images/dot.png?1454551004');
 }
 #Carousel.carousel .item:nth-child(1) {
-  background: url('../images/slider1.jpg?1454511348');
+  background: url('../images/slider1.jpg?1454556604');
 }
 #Carousel.carousel .item:nth-child(2) {
   background: url('../images/slider2.jpg?1454511338');
 }
 #Carousel.carousel .item:nth-child(3) {
-  background: url('../images/slider3.jpg?1454511360');
+  background: url('../images/slider3.jpg?1454511646');
 }
 #Carousel.carousel .item:nth-child(1), #Carousel.carousel .item:nth-child(2), #Carousel.carousel .item:nth-child(3) {
   -moz-background-size: cover;
@@ -191,24 +194,32 @@ h2 img {
   clear: both;
 }
 #Home section * {
-  margin: 0;
+  margin-bottom: 10px;
+  line-height: 1.2;
 }
 #Home section h3 {
   font-size: 0.8em;
 }
+#Home section h4 {
+  font-size: 0.5em;
+  letter-spacing: .17em;
+}
 #Home section h5 {
   font-size: 18px;
 }
+#Home section h5 i {
+  padding-right: 10px;
+  margin: 0;
+}
 #Home section p {
   font-size: 16px;
-  line-height: 1.2;
 }
 #Home section .col-md-6 {
-  padding: 0 10%;
+  padding: 0 4%;
   margin-top: 10px;
 }
-#Home section .col-md-6:first-of-type {
-  border-right: 1px solid #666;
+#Home section .col-md-6:nth-of-type(2) {
+  border-left: 1px solid #fff;
 }
 #Home .navbar {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
