@@ -384,9 +384,12 @@ ul, li {
             top: 60px;
         }
 		.navbar {
-			@include background-image(linear-gradient($green, rgba($green,.8) 70%, rgba($green,.5)));
+			@include background-image(linear-gradient($green, rgba($green,1)));
 			color: $white;
 			h2.logo-s {
+				a {
+					color: $white;
+				}
 				display: block;
 				padding: 10px;
 				margin: 0;
@@ -686,27 +689,36 @@ ul, li {
 			margin: 12px;
 			vertical-align: top;
 			a {
+				font-size: $xxl-font;
+				color: $white;
 				width: 220px;
 				height: 50px;
 				border-radius: 60px;
 				display: block;
 				overflow: hidden;
+				line-height: 50px;
 				box-shadow: 0 5px 10px rgba($black,.4),  0 10px 20px rgba($black,.6);
 				&:active {
 					margin-top: 10px;
 				}
 			}
 			&:nth-child(1) {
-				
 				a {
-					font-size: $xxl-font;
 					display: block;
 					background: #3b5998;
-					line-height: 50px;
-					color: $white;
+					
 					i {
 						margin-right: 10px;
 					}
+				}
+			}
+			&:nth-child(2) {
+				a {
+					img {
+						width: 60px;
+						margin-top: -4px;
+					}
+					background: #4fc315;
 				}
 			}
 		}

@@ -24,10 +24,10 @@
 		<script type="text/javascript" src="js/html5shiv.min.js"></script>
 		<script type="text/javascript" src="js/respond.min.js"></script>
 	<![endif]-->
-	<script src="https://use.typekit.net/czz1lsx.js"></script>
+	<script src="https://use.typekit.net/oem8boq.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
-<body data-spy="scroll" data-target="#navigation">
+<body data-spy="scroll" data-target="#navigation" id="top">
 	
 	<!-- wrapper -->
 	<div id="wrapper">
@@ -37,7 +37,7 @@
 				<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 					<div class="container">
 						<div class="navbar-header">
-							<h2 class="logo-s"><img src="images/funlot_logo.png" alt="豐樂線上市集" title="豐樂線上市集" width="50" height="50">豐樂線上市集</h2>
+							<h2 class="logo-s"><a href="#top"><img src="images/funlot_logo.png" alt="豐樂線上市集" title="豐樂線上市集" width="50" height="50">豐樂線上市集</a></h2>
 							<button type="button" class="navbar-toggle hamburger" data-toggle="collapse" data-target="#main-nav">
 								<i class="fa fa-bars"></i>
 							</button>
@@ -134,10 +134,10 @@
 		<div id="Store" class="section">
 			<div class="container">
 				<h2><span>豐樂起跑</span><span class="hidden-xs">，</span><span>首批市集示範店家</span></h2>
-				<img src="images/store1.png" class="img-responsive col-sm-3 col-xs-6" width="300" height="300" alt="上善丹茶" title="上善丹茶">
-				<img src="images/store2.png" class="img-responsive col-sm-3 col-xs-6" width="300" height="300" alt="共好學院" title="共好學院">
-				<img src="images/store3.png" class="img-responsive col-sm-3 col-xs-6" width="300" height="300" alt="青禾" title="青禾">
-				<img src="images/store4.png" class="img-responsive col-sm-3 col-xs-6" width="300" height="300" alt="福釀坊" title="福釀坊">
+				<a href="http://s1.myqr.com.tw/Shop/Home/62" target="_blank"><img src="images/store1.png" class="img-responsive col-sm-3 col-xs-6" width="300" height="300" alt="上善丹茶" title="上善丹茶"></a>
+				<a href="http://s1.myqr.com.tw/Shop/Home/61" target="_blank"><img src="images/store2.png" class="img-responsive col-sm-3 col-xs-6" width="300" height="300" alt="共好學院" title="共好學院"></a>
+				<a href="http://s1.myqr.com.tw/Shop/Home/64?ShopList=0" target="_blank"><img src="images/store3.png" class="img-responsive col-sm-3 col-xs-6" width="300" height="300" alt="青禾" title="青禾"></a>
+				<a href="http://s1.myqr.com.tw/Shop/Home/63" target="_blank"><img src="images/store4.png" class="img-responsive col-sm-3 col-xs-6" width="300" height="300" alt="福釀坊" title="福釀坊"></a>
 			</div>
 		</div>
 		
@@ -145,8 +145,8 @@
 			<div class="container">
 				<h2>豐樂社群</h2>
 				<ul>
-					<li><a href="https://www.facebook.com/se20141101/" target="_blank"><i class="fa fa-facebook-official"></i>facebook</a></li>
-					<li><a href="#" target="_blank"><img src="images/icon_line.png" alt=""></a></li>
+					<li><a href="https://www.facebook.com/se20141101/" target="_blank"><i class="fa fa-facebook-official"></i>官方粉絲團</a></li>
+					<li><a href="http://line.me/ti/p/%40erl1168t" target="_blank"><img src="images/icon_line.png" alt="">官方帳號</a></li>
 				</ul>
 			</div>
 		</div>
@@ -166,7 +166,7 @@
 	<script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
 	<script>
 		$(function() {
-			$(".nav li a[href^='#']").on('click', function(e) {
+			$(".nav li a[href^='#'], .logo-s a, .logo a").on('click', function(e) {
 				e.preventDefault();
 				var hash = this.hash;
 
@@ -187,6 +187,9 @@
 					$('.navbar').removeClass('past-main');
 					$('h2.logo').removeClass('past-logo');
 				}
+			});
+			$('.nav a').on('click', function(){
+				$('.navbar-toggle').click()
 			});
 		});
 		$('.carousel').carousel();
