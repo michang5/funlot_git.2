@@ -71,17 +71,35 @@ ul, li {
 	text-align: center;
 	@include full-screen;
 	@include clearfix;
+	&#Wish {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	h2 {
+		font-weight: 900;
+		font-size: $xxxxxl-font;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	@include respond-to (only-mobile){
+		h2 {
+			margin-bottom: 0;
+		}
+	}
 }
 #Carousel {
 	width: 100%;
+	height: 100%;
     min-height: 760px;
     overflow: hidden;
 	position: relative;
 	&.carousel {
-        height: 760px;
+        height: 100%;
+    	min-height: 760px;
         overflow: hidden;
 		.item, .carousel-inner, .mask {
-            height: 760px;
+            height: 100%;
+   			min-height: 760px;
 		}
 		.mask {
 			position: absolute;
@@ -92,17 +110,16 @@ ul, li {
 	}
     @include respond-to (only-device){
         &.carousel {
-            height: auto;
-            min-height: 0; 
+//            min-height: 0; 
             .item, .carousel-inner, .mask {
-//                height: 540px;
-            }
+				min-height: 820px;
+			}
         }
     }
     @include respond-to (normal-mobile){
         &.carousel {
             .item, .carousel-inner, .mask {
-//                height: 540px;
+				
             }
         }
     }
@@ -204,7 +221,7 @@ ul, li {
 			letter-spacing: .17em;
 		}
 		h5 {
-			font-size: $xxxxs-font;
+			font-size: $xxxs-font;
             font-weight: 500;
 			i {
                 width: 30px;
@@ -309,15 +326,22 @@ ul, li {
 		@include background-image(linear-gradient($green, rgba($green,0)));
 	}
 	@include respond-to (md-screen){
+		section {
+            width: 70%;
+        }
 	}
 	@include respond-to (only-device){
-        display: block;
+        min-height: 820px;
+		article {
+            top: 200px;
+        }
         section {
             width: 80%;
         }
 	}
 	@include respond-to (only-mobile){
-        article {
+		height: auto;
+		article {
             top: 60px;
         }
 		.navbar {
@@ -327,8 +351,9 @@ ul, li {
 				display: block;
 				padding: 10px;
 				margin: 0;
-				width: 100px;
 				float: left;
+				font-size: $l-font;
+				text-shadow: 0 0 5px rgba($black,.6), 0 2px 20px rgba($black,.3);
 			}
 			.navbar-nav {
 				margin-bottom: 0;
@@ -362,6 +387,10 @@ ul, li {
                 &:nth-of-type(2) {
                     border-left: none;
                 }
+				&:nth-of-type(1) {
+                    border-top: 1px solid $white;
+					padding-top: 20px;
+                }
 		    }
         }
 	}
@@ -373,39 +402,62 @@ ul, li {
         }
     }
 }
-#About, #Service, #Clients, #Contact {
-	header {
-		h2, h3 {
-			color: $yellow;
+#Wish {
+	article {
+		@include clearfix;
+		text-align: left;
+		img {
+			float: left;
 		}
-		h3 {
-			font-size: 10px;
-			letter-spacing: 1em;
-		}
-		h2 {
-			font-size: $xxxxxl-font;
-			letter-spacing: .1em;
-			margin: 5px auto 50px;
+		section {
+			padding-top: 40px;
+			h4 {
+				font-size: $xxxl-font;
+				color: $green;
+				&:first-letter {
+					margin-right: 5px;
+					background: $green;
+					padding: 10px;
+					width: 50px;
+					height: 50px;
+					color: $white;
+					@include border-radius(50px);
+				}
+				span {
+					&:nth-child(1) {
+						margin-right: 10px;
+						background: $green;
+						padding: 10px;
+						width: 50px;
+						height: 50px;
+						color: $white;
+						@include border-radius(50%);
+					}
+				}
+			}
 		}
 	}
-	p {
-		width: 80%;
-		margin: 0 auto;
-		font-size: $xl-font;
-		text-align: left;
-		margin-bottom: 20px;
+	@include respond-to (md-screen){
+		article { 
+			section {
+				padding-top: 0;
+			}
+		}
 	}
 	@include respond-to (only-device){
-		p {
-			width: 90%;
+		article { 
+			section {
+				padding-top: 0;
+			}
 		}
 	}
-	@include respond-to (normal-mobile){
-		p {
-			width: 100%;
+	@include respond-to (only-mobile){
+		img.col-xs-12 {
+			padding: 3% 10%;
 		}
 	}
 }
+
 
 #About {
 	background: image-url('about_bg.png') no-repeat center top;
@@ -725,12 +777,6 @@ ul, li {
 	}
 	@include respond-to (only-device){
 		padding-top: 182px;
-		#clients-carousel {
-			display: block;
-			height: auto;
-			padding-bottom: 80px;
-			margin-top: 100px;
-		}
 		.single {
 			display: none;
 		}
