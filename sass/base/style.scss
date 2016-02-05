@@ -2,8 +2,7 @@
 $primary-color: #c3271f;
 
 $yellow: #fcd91d;
-$nightsky: #1a386b;
-$grayblue: #485685;
+
 
 $black: #000;
 $white: #fff;
@@ -12,12 +11,13 @@ $dark-gray: #333;
 $rice: #edeadf;
 
 $light-yellow: #decf7b;
-$light-green: #6bb93b;
+$light-green: #e3e7cc;
 $green: #677600;
 $dark-green: #474a00;
 $pink: #ea2c4b;
 $dark-pink: #ba0926;
 $red: #d34f42;
+$brown: #54473e;
 
 //font style
 $xxxxs-font: .4em;
@@ -32,6 +32,7 @@ $xxl-font: 1.5em;
 $xxxl-font: 1.75em;
 $xxxxl-font: 2em;
 $xxxxxl-font: 2.5em;
+$xxxxxxl-font: 3em;
 
 @mixin full-screen {
 //	height: 100%;
