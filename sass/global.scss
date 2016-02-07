@@ -57,11 +57,14 @@ ul, li {
 	padding: 10px 20px;
     background: $pink;
     color: $white;
-    border: none;
-    &:hover {
+	border:0;
+	outline:none;
+    &:hover, &:active, &:focus, &:active:hover, &:active:focus {
         background: $dark-pink;
     }
 }
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
 .plus {
 	position: relative;
 	display: inline-block;
