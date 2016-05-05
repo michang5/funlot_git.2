@@ -848,3 +848,9 @@ ul, li {
   color: #fff;
   padding: 30px;
 }
+
+
+/*modal*/
+button.close {
+    padding: 20px;
+}
