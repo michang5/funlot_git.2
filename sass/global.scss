@@ -251,16 +251,17 @@ ul, li {
 		@include transparent ($black,.5);
 		* {
 			margin-bottom: 10px;
-			line-height: 1.2;
             color: $white;
 		}
 		h3 {
 			font-size: $s-font;
 			font-weight: 500;
+			line-height: 1.2;
 		}
 		h4 {
 			font-size: $xxxs-font;
 			letter-spacing: .17em;
+			line-height: 1.2;
 		}
 		h5 {
 			font-size: $xxxs-font;
@@ -270,19 +271,20 @@ ul, li {
                 height: 30px;
                 text-align: center;
                 line-height: 30px;
-                background: $green;
-                color: $white;
-				margin-right: 10px;
-                @include border-radius(50%);
+//              background: $green;
+//              color: $white;
+//				margin-right: 10px;
+//              @include border-radius(50%);
                 text-shadow: none;
-                box-shadow: 0 0 10px rgba($white,.5);
+//                box-shadow: 0 0 10px rgba($white,.5);
                 &.fa-heart {
-                    font-size: 12px;
+//                    font-size: 16px;
                 }
 			}
 		}
 		p {
-			font-size: $xxxxs-font;
+			font-size: 16px;
+			line-height: 1.6;
 		}
         .btn {
             color: $white;
@@ -293,22 +295,25 @@ ul, li {
 		.col-sm-6 {
 			padding: 0 4%;
 			margin-top: 10px;
-			&:nth-of-type(2) {
-				border-left: 1px solid $white;
+			&:nth-of-type(1) {
+				border-right: 1px solid $white;
 			}
 		}
 	}
 	.navbar {
-		@include background-image(linear-gradient(rgba($light-yellow,.9) ,rgba($light-yellow,.5) 50%, rgba($dark-green,0)));
+		@include background-image(linear-gradient(rgba($green,.9) ,rgba($green,.5) 50%, rgba($white,0)));
 		border-bottom: none;
 		text-align: center;
 		h2.logo {
-//			width: 116px;
+			width: 116px;
 			font-size: $s-font;
 			color: $white;
-			padding: 16px;
+//			padding: 16px;
 			text-shadow: 0 0 5px rgba($black,.6);
 			@include transition(all, .5s, ease-in);
+			img {
+				width: 100%;
+			}
 			* {
 				@include transition(all, .5s, ease-in);
 			}
@@ -358,14 +363,56 @@ ul, li {
 					}
 				}
 				&:nth-child(3) {
-					padding: 0 45px;
+//					padding: 0 45px;
 				}
 			}
 		}
 		
 	}
 	.past-main {
-		@include background-image(linear-gradient($light-yellow, rgba($light-yellow,.7)));
+		@include background-image(linear-gradient($green, rgba($green,.7)));
+	}
+	.social-media {
+		li {
+			@include inline-block;
+			vertical-align: top;
+			font-size: 20px;
+			width: 60px;
+			height: 60px;
+			line-height: 60px;
+			margin: 2px;
+			border-radius: 100%;
+			&:nth-child(1) {
+				background: #3b5998;
+			}
+			&:nth-child(2) {
+				background: #00c300;
+				img {
+					margin-top: 3px;
+				}
+			}
+			&:nth-child(3) {
+				background: #7bb32e;
+			}
+			&:nth-child(4) {
+				background: #dc4e41;
+			}
+			a {
+				display: block;
+			}
+			span {
+				display: block;
+				margin-bottom: 0;
+			}
+			i {
+				margin-bottom: 0;
+				
+			}
+			img {
+				width: 40px;
+				
+			}
+		}
 	}
 	@include respond-to (md-screen){
 		section {
@@ -387,7 +434,7 @@ ul, li {
             top: 60px;
         }
 		.navbar {
-			@include background-image(linear-gradient($yellow, rgba($yellow,.7)));
+			@include background-image(linear-gradient(rgba($green,1), rgba($green,.7)));
 			color: $white;
 			h2.logo-s {
 				a {
@@ -399,6 +446,9 @@ ul, li {
 				float: left;
 				font-size: $l-font;
 				text-shadow: 0 0 5px rgba($black,.6), 0 2px 20px rgba($black,.3);
+				img {
+					width: 180px;
+				}
 			}
 			.navbar-nav {
 				margin-bottom: 0;
@@ -425,19 +475,36 @@ ul, li {
 			}
 		}
         section {
+			
             .btn {
                 margin: 6px;
             }
             .col-sm-6 {
+				h5 {
+					line-height: 1;
+					margin: 0;
+				}
                 &:nth-of-type(2) {
-                    border-left: none;
+//                    border-left: none;
                 }
 				&:nth-of-type(1) {
                     border-top: 1px solid $white;
 					padding-top: 20px;
+					border-right: none;
+					margin-bottom: 30px;
                 }
 		    }
         }
+	}
+	@include respond-to (normal-mobile){
+		.social-media {
+			li {
+				width: 46px;
+				height: 46px;
+				line-height: 46px;
+				margin: 0;
+			}
+		}
 	}
     @include respond-to (xxs-mobile){
         header {
@@ -446,6 +513,7 @@ ul, li {
             }
         }
     }
+	
 }
 #Character {
 	margin-top: 40px;
